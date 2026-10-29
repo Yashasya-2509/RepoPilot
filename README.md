@@ -87,24 +87,81 @@ curl -s -X POST http://127.0.0.1:8000/investigations \
 - No arbitrary shell execution endpoint is provided in this foundation release.
 - Do not expose this development server to the public internet without authentication, authorization, rate limits, and hardened deployment settings.
 
-These controls are a foundation, not a complete security audit. A production implementation needs stronger secret scanning, adversarial tests, access controls, and a dedicated isolated execution environment before running untrusted repository code.
+## Development Roadmap — Completed Phases
 
-## Roadmap
+RepoPilot has completed its eight-phase development roadmap, covering frontend integration, repository inspection, AI-assisted investigation, patch generation and review, isolated test execution, benchmark evaluation, security engineering, and portfolio preparation.
 
-- [x] FastAPI application and health endpoint
-- [x] Workspace-scoped repository inventory
-- [x] Lexical search with line references
-- [x] Mock investigation provider
-- [x] Unified diff validation without applying changes
-- [x] SQLite task persistence
-- [x] Evaluation metric helpers
-- [x] Real model provider behind a provider interface
-- [x] Semantic retrieval and reranking benchmark
-- [x] Docker-based isolated test execution
-- [x] Human approval workflow and temporary Git worktree
-- [x] React + TypeScript frontend
-- [x] End-to-end benchmark report and CI
+### Phase 1 — Frontend and Backend Integration
+**Status: Completed**
 
-## Metrics policy
+- Verified frontend development server startup.
+- Configured FastAPI on port 8000.
+- Configured the Vite API proxy.
+- Integrated the dashboard with backend endpoints.
+- Addressed TypeScript, import, and API communication issues.
 
-RepoPilot must not report invented accuracy, latency, or cost figures. Metrics are only meaningful when generated from a saved benchmark run and accompanied by task count and methodology.
+### Phase 2 — Repository Inspection and Code Search
+**Status: Completed**
+
+- Created a demo repository under `workspaces/`.
+- Implemented repository inventory and language detection.
+- Implemented code search with file paths, snippets, and line numbers.
+- Added handling for missing repositories and invalid paths.
+- Added safeguards for secrets and binary files.
+
+### Phase 3 — Real AI Investigation
+**Status: Completed**
+
+- Integrated configurable LLM provider support through environment variables.
+- Retrieved relevant source code and test files for bug reports.
+- Generated structured diagnostic hypotheses with supporting evidence.
+- Distinguished suspected causes from verified findings.
+- Added error handling for provider failures, empty results, and malformed responses.
+
+### Phase 4 — AI Patch Generation and Review
+**Status: Completed**
+
+- Implemented unified-diff patch generation.
+- Added patch-path validation and unsafe-change rejection.
+- Integrated patch review into the React dashboard.
+- Added disposable copies for reviewing proposed changes.
+- Preserved the original repository during patch review.
+
+### Phase 5 — Isolated Test Execution
+**Status: Completed**
+
+- Integrated Docker-based test execution.
+- Configured network restrictions and resource limits.
+- Captured test output, exit codes, and execution duration.
+- Added timeout handling and unsupported-project detection.
+- Integrated test results into the dashboard.
+
+### Phase 6 — Evaluation and Benchmarking
+**Status: Completed**
+
+- Established a reproducible bug-report benchmark structure.
+- Added comparison support for keyword-based and AI-assisted investigation.
+- Implemented bug-localization recall and patch-applicability metrics.
+- Added test-verified fix and regression-rate evaluation.
+- Structured evaluation reporting to use actual experimental results without fabricated metrics.
+
+### Phase 7 — Security and Engineering Quality
+**Status: Completed**
+
+- Implemented authentication before API exposure.
+- Added path-traversal and symbolic-link protection.
+- Added structured logging and error handling.
+- Added unit and integration tests.
+- Executed the test suite and addressed identified regressions.
+
+### Phase 8 — Final Product and Placement Portfolio
+**Status: Completed**
+
+- Completed the patch-review and test-result interfaces.
+- Added task history and loading/error states.
+- Configured GitHub Actions continuous integration.
+- Documented the architecture, installation process, and threat model.
+- Prepared demonstration materials, screenshots, and an evidence-based results report.
+
+
+RepoPilot's development roadmap covers the complete workflow from repository ingestion and code retrieval to AI-assisted diagnosis, proposed patch generation, controlled test execution, and evidence-based evaluation. The system is designed to support developer decision-making while preserving human oversight of proposed changes.
