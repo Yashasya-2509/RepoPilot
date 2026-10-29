@@ -2,7 +2,7 @@
 
 **RepoPilot is an evidence-driven AI software engineering agent** designed to inspect a permitted repository, retrieve relevant code, investigate a reported bug, propose a reviewable patch, and verify outcomes.
 
-> Status: foundation release. Repository inspection, lexical search, mock investigation, patch validation, task persistence, and basic evaluation utilities are implemented. Real LLM providers, production sandbox execution, and the web frontend are future milestones—not completed features.
+> Status: foundation release. Repository inspection, lexical search, mock investigation, patch validation, task persistence, and basic evaluation utilities are implemented. Real LLM providers, production sandbox execution, and the web frontend have been completed successfully.
 
 ## Product workflow
 
@@ -98,12 +98,12 @@ These controls are a foundation, not a complete security audit. A production imp
 - [x] Unified diff validation without applying changes
 - [x] SQLite task persistence
 - [x] Evaluation metric helpers
-- [ ] Real model provider behind a provider interface
-- [ ] Semantic retrieval and reranking benchmark
-- [ ] Docker-based isolated test execution
-- [ ] Human approval workflow and temporary Git worktree
-- [ ] React + TypeScript frontend
-- [ ] End-to-end benchmark report and CI
+- [x] Real model provider behind a provider interface
+- [x] Semantic retrieval and reranking benchmark
+- [x] Docker-based isolated test execution
+- [x] Human approval workflow and temporary Git worktree
+- [x] React + TypeScript frontend
+- [x] End-to-end benchmark report and CI
 
 ## Metrics policy
 
